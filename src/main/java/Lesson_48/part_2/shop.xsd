@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+
+
+  <!-- В валидаторе может быть несколько рутовых, т.е. 1 валидатор, на несколько xml файлов -->
+  <xsd:element name="simple_price">
+    <xsd:simpleType>
+      <xsd:restriction base="SimpleDecimal"></xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+
+
+  <!--Можно вытаскивать объекты как в Java, главное дать имя, например name="SimpleDecimal"
+  и потом юзать этот блок как restriction base="SimpleDecimal" либо прописать type="ComplexItem" -->
+  <xsd:simpleType name="SimpleDecimal">
+    <xsd:restriction base="xsd:double">
+      <xsd:minInclusive value="0"></xsd:minInclusive>
+      <xsd:maxInclusive value="100"></xsd:maxInclusive>
+      <xsd:pattern value="\d+\.\d{2}"></xsd:pattern>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <!--Помимо передачи простых типов, можно передавать сложные, т.е. когда в один тэг вложены
+  другие тэги-->
+
+  <xsd:element name="complex_price" type="ComplexItem">
+
+  </xsd:element>
+
+  <xsd:complexType name="ComplexItem">
+    <xsd:sequence> <!-- тэги должны будут идти последовательно,
+      all - в любой последовательности
+      choice - можно выбрать какой-то один из тэгов -->
+      <!-- можем указать тип у элемента, чтобы можно было ввести только данные конкретного типа -->
+      <xsd:element name="title" type="xsd:token"></xsd:element>
+      <xsd:element name="property"></xsd:element>
+      <!-- можно добавить простой тип в сложный тип, например -->
+      <xsd:element name="price" type="SimpleDecimal"></xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+
+
+
+
+</xsd:schema>

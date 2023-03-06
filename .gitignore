@@ -36,9 +36,9 @@
 # since they will be recreated, and may cause churn.  Uncomment if using
 # auto-import.
 # .idea/artifacts
-# .idea/compiler.xml
-# .idea/jarRepositories.xml
-# .idea/modules.xml
+# .idea/compiler.Lesson_48
+# .idea/jarRepositories.Lesson_48
+# .idea/modules.Lesson_48
 # .idea/*.iml
 # .idea/modules
 # *.iml
@@ -90,8 +90,8 @@ fabric.properties
 # Comment Reason: https://github.com/joeblau/gitignore.io/issues/186#issuecomment-215987721
 
 # *.iml
-# modules.xml
-# .idea/misc.xml
+# modules.Lesson_48
+# .idea/misc.Lesson_48
 # *.ipr
 
 # Sonarlint plugin

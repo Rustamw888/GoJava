@@ -1,0 +1,23 @@
+<?Lesson_48 version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"> <!-- xsd документ -->
+
+  <xs:element name="books">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="book" type="book" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="book">
+    <xs:sequence>
+      <xs:element name="title" type="xs:string"/>
+      <xs:element name="autor" type="xs:string"/>
+      <xs:element name="count_page" type="xs:string"/>
+      <xs:element name="year" type="xs:string"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string"/> <!-- атрибуты указываем в конце,
+     после указания внутренних тэгов, комплексного тэга book-->
+  </xs:complexType>
+
+</xs:schema>

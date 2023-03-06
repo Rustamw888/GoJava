@@ -1,0 +1,22 @@
+<?Lesson_48 version="1.0" encoding="UTF-8"?>
+
+<books xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="books.xsd"> <!-- На каком сайте эта схема находится
+       и сам файл из нашего проекта, -->
+
+  <book id="1">
+    <title>The Great American Novel</title>
+    <autor>Mark Twain</autor>
+    <count_page>500</count_page>
+    <year>1998</year>
+  </book>
+
+  <book id="2">
+    <title>Java SE 8</title>
+    <autor>Gilbert Shildt</autor>
+    <count_page>1500</count_page>
+    <year>2008</year>
+  </book>
+
+
+</books>

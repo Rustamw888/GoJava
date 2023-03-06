@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+<simple_price xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="shop.xsd">5.00</simple_price>
+-->
+
+<complex_price xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="shop.xsd">
+
+  <title>       fghg
+  hfh
+       fh
+  ghf
+  </title>
+  <property>
+    <!-- Переводит в текст все что внутри -->
+    <![CDATA[
+    <price>10.00</price>
+]]>
+  </property>
+  <price>10.00</price>
+
+</complex_price>

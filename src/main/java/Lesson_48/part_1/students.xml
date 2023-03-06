@@ -1,0 +1,48 @@
+<?Lesson_48 version="1.0" encoding="UTF-8"?> <!-- правило хорошего тона, ставим версию Lesson_48 и encoder, если нужно -->
+<!-- кавычки можно использовать любые -->
+
+<!-- должен быть корневой тэг -->
+<!-- тэги бывают:
+    1. самозакрывающиеся </tag>
+    2. информационные <?Lesson_48>
+    3. корневой или рутовый
+    4. внутренний тэг (вложенный внутри других тэгов
+    5. тэги типа DOCTYPE, помогающие прикрутить, какой-либо функционал (DTD устаревший валидатор,
+    который следит за валидацией написанного в файле, можно передать через тэг как ниже,
+    либо ссылкой на файл (это Lesson_48 с шасширением .dtd), это описание условия валидации документа -->
+
+<!DOCTYPE students [
+  <!ELEMENT students (student*)>
+  <!ELEMENT student (name, phone_number, country, city, street)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT phone_number (#PCDATA)>
+  <!ELEMENT country (#PCDATA)>
+  <!ELEMENT city (#PCDATA)>
+  <!ELEMENT street (#PCDATA)>
+  <!ATTLIST student id CDATA #REQUIRED>
+  ]>
+
+<students>
+
+<!-- внутри тэгов могут быть атрибуты, такие как ID -->
+<!-- между открывающимся и закрывающимся тэгом может содержаться информация, например какой-либо текст -->
+  <student id="1">
+    <name> Alex </name>
+    <phone_number> 123456789 </phone_number>
+    <country> The USA </country>
+    <city> Denver </city>
+    <street> 45 Main street </street>
+  </student>
+
+  <!-- внутренние тэги не могут закрываться после внешнего -->
+  <student id="2">
+    <name> Bobinio </name>
+    <phone_number> 987654321 </phone_number>
+    <country> Brasil </country>
+    <city> Rio </city>
+    <street> Main street </street>
+  </student>
+
+</students>
+
+
