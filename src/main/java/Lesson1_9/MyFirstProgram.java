@@ -1,13 +1,7 @@
-package Lesson1_5;
+package Lesson1_9;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Formatter;
 import java.util.Random;
-import java.util.Scanner;
 
 public class MyFirstProgram {
 
