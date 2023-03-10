@@ -2,8 +2,11 @@ package Lesson_10.calculator;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
@@ -31,6 +34,7 @@ public class SimpleCalculator {
   JButton buttonSplit;
   JButton buttonPercent;
   JPanel panelButton;
+  ConverterForCalculator converter = new ConverterForCalculator();
 
   // Создаем конструктор
   SimpleCalculator() {
@@ -88,9 +92,84 @@ public class SimpleCalculator {
     window.add("Center", panelButton);
 
     JFrame frame = new JFrame("Calculator");
+    frame.setContentPane(window);
     frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     frame.pack(); // выбирает окно под размер содержимого
-    frame.setContentPane(window);
     frame.setVisible(true);
+
+    // подключение слушателей
+    button0.addActionListener(converter);
+    button1.addActionListener(converter);
+    button2.addActionListener(converter);
+    button3.addActionListener(converter);
+    button4.addActionListener(converter);
+    button5.addActionListener(converter);
+    button6.addActionListener(converter);
+    button7.addActionListener(converter);
+    button8.addActionListener(converter);
+    button9.addActionListener(converter);
+    buttonPlus.addActionListener(converter);
+    buttonMinus.addActionListener(converter);
+    buttonMultiply.addActionListener(converter);
+    buttonPoint.addActionListener(converter);
+    buttonEqual.addActionListener(converter);
+    buttonSplit.addActionListener(converter);
+
+  }
+
+  private class ConverterForCalculator implements ActionListener {
+
+    String a1;
+    char selectedAction;
+
+    @Override
+    public void actionPerformed(ActionEvent event) {
+      Object obj = event.getSource();
+      String s1;
+      Double result;
+      if (obj instanceof JButton && obj != buttonEqual && obj != buttonMinus
+          && obj != buttonMultiply && obj != buttonPlus && obj != buttonSplit ) {
+        s1 = ((JButton) obj).getText();
+        display.setText(display.getText() + s1);
+      } else if (obj == buttonPlus) {
+        a1 = display.getText();
+        display.setText("");
+        selectedAction = '+';
+      } else if (obj == buttonMinus) {
+        a1 = display.getText();
+        display.setText("");
+        selectedAction = '-';
+      } else if (obj == buttonMultiply) {
+        a1 = display.getText();
+        display.setText("");
+        selectedAction = '*';
+      } else if (obj == buttonSplit) {
+        a1 = display.getText();
+        display.setText("");
+        selectedAction = '/';
+      } else if (obj == buttonEqual) {
+        Double x = Double.parseDouble(a1);
+        Double y = Double.parseDouble(display.getText());
+        switch (selectedAction) {
+          case '+':
+           result = x + y;
+           display.setText(result.toString());
+           break;
+          case '-':
+           result = x - y;
+           display.setText(result.toString());
+           break;
+          case '*':
+           result = x * y;
+           display.setText(result.toString());
+           break;
+          case '/':
+           result = x / y;
+           display.setText(result.toString());
+           break;
+        }
+      }
+
+    }
   }
 }
