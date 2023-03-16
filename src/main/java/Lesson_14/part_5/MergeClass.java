@@ -5,9 +5,9 @@ import java.util.Arrays;
 public class MergeClass {
 
   public static void main(String[] args) {
-    int[] array2 = {1, 2, 3, 4, 5, 6, 7, 8};
-    int[] array1 = {2, 16, 9, 10};
-    System.out.println(Arrays.toString(merge2(array1, array2)));
+    int[] array1 = {1, 2, 3, 4, 5, 6, 7, 8};
+    int[] array2 = {2, 16, 9, 10};
+    System.out.println(Arrays.toString(merge(array1, array2)));
   }
 
   public static int[] merge(int[] a, int[] b) {
@@ -68,6 +68,34 @@ public class MergeClass {
         b[j + 1] = result[k];
         result[k] = temp;
       }
+      j++;
+      k++;
+    }
+    return result;
+  }
+
+  public static int[] merge3(int[] a, int[] b) {
+    int[] result = new int[a.length + b.length];
+    int n = a.length;
+    int m = b.length;
+    int i = 0, j = 0, k = 0;
+    while (i < n && j < m) {
+      if (a[i] < b[j]) {
+        result[k] = a[i];
+        i++;
+      } else {
+        result[k] = b[j];
+        j++;
+      }
+      k++;
+    }
+    while (n > i) {
+      result[k] = a[i];
+      i++;
+      k++;
+    }
+    while (m > j) {
+      result[k] = b[j];
       j++;
       k++;
     }
