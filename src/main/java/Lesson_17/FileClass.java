@@ -2,10 +2,11 @@ package Lesson_17;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
 
 public class FileClass {
 
-  public static void main(String[] args) {
+  public static void main1(String[] args) {
     String path = "C:\\ProjectsJob\\GoJava\\src\\main\\java\\Lesson_17\\test.txt";
 
     File file = new File(path);
@@ -23,5 +24,18 @@ public class FileClass {
     } catch (IOException e) {
       throw new RuntimeException(e);
     }
+  }
+
+  public static void main(String[] args) {
+    String path = "C:\\ProjectsJob\\GoJava\\src\\main\\java\\Lesson_17\\folder1\\folder1_1";
+
+    File file = new File(path);
+    if (!file.exists()) {
+      file.mkdirs();
+      System.out.println("Папка в папке создана");
+    } else {
+      System.out.println("Папка в папке уже есть");
+    }
+    System.out.println(Arrays.toString(file.list()));
   }
 }
