@@ -1,4 +1,4 @@
-package Lesson_18.part_2;
+package Lesson_18.part_2_3;
 
 import java.util.ArrayList;
 import lombok.AllArgsConstructor;

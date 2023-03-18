@@ -1,4 +1,4 @@
-package Lesson_18.part_2;
+package Lesson_18.part_2_3;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
