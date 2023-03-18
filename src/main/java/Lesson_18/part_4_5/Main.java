@@ -1,4 +1,4 @@
-package Lesson_18.part_4;
+package Lesson_18.part_4_5;
 
 public class Main {
 
