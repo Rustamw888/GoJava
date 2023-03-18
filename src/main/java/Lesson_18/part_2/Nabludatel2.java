@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Nabludatel {
+public class Nabludatel2 implements INabludatel {
 
   private int temp = 0;
   private int pressure = 0;
