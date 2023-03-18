@@ -1,8 +1,11 @@
 package Lesson_18.part_4;
 
-public class CarRobot {
+public class CarRobot extends Robot {
 
-  void go() {
-    System.out.println("Robot go");
+  Robot robot = new Robot();
+
+  void drive() {
+    robot.drive();
+    System.out.println("I am car");
   }
 }

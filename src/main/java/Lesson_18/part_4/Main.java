@@ -3,11 +3,10 @@ package Lesson_18.part_4;
 public class Main {
 
   public static void main(String[] args) {
-    CarRobot carRobot = new CarRobot();
-    carRobot.go();
-
-    BusRobot busRobot = new BusRobot();
-    busRobot.go();
-    busRobot.walk();
+    RobotCreator creator = new RobotCreator();
+    creator.setRobot(new CarRobot());
+    creator.drive();
+    creator.setRobot(new BusRobot());
+    creator.drive();
   }
 }
