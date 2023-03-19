@@ -1,4 +1,4 @@
-package Lesson_20;
+package Lesson_20.part_1;
 
 public enum Shape {
 

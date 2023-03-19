@@ -1,6 +1,6 @@
-package Lesson_20;
+package Lesson_20.part_1;
 
-import static Lesson_20.Shape.*;
+import static Lesson_20.part_1.Shape.*;
 
 public class ShapeRunner {
 
