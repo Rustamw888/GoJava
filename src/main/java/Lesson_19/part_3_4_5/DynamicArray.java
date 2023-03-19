@@ -1,4 +1,4 @@
-package Lesson_19.part_3;
+package Lesson_19.part_3_4_5;
 
 public class DynamicArray {
   int[] data = {0, 1, 2, 3, 4, 5, 6, 7};
