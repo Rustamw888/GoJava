@@ -1,4 +1,4 @@
-package Lesson_19.part_6;
+package Lesson_19.part_6_7_8;
 
 public class Message<T> {
 
@@ -16,5 +16,9 @@ public class Message<T> {
 
   public void setValue(T value) {
     this.value = value;
+  }
+
+  public <T> T print(T t) {
+    return t;
   }
 }
