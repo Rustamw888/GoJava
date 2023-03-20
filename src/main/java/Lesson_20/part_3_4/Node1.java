@@ -1,4 +1,4 @@
-package Lesson_20.part_3;
+package Lesson_20.part_3_4;
 
 public class Node1 {
 
