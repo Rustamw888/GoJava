@@ -1,4 +1,4 @@
-package Lesson_21.part_2;
+package Lesson_21.part_2_3;
 
 public class Program {
 
