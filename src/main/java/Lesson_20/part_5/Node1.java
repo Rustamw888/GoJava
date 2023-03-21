@@ -44,11 +44,27 @@ class LinkNode {
     tail = tail.getNext();
   }
 
+  public void add(int data, int index) {
+    Node1 ref = head;
+    for (int i = 0; i < index-1; i++) {
+      ref = ref.getNext();
+    }
+    ref.setNext(new Node1(data, ref.getNext()));
+  }
+
   public void print() {
     Node1 ref = head;
     while (ref != null) {
       System.out.printf("%d ", ref.getValue());
       ref = ref.getNext();
     }
+  }
+  
+  public void print(int index) {
+    Node1 ref = head;
+    for (int i = 0; i < index; i++) {
+      ref = ref.getNext();
+    }
+    System.out.println(ref.getValue());
   }
 }

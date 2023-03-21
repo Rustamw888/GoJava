@@ -9,6 +9,11 @@ public class DynamicNode {
     linkNode.add(500);
     linkNode.add(5000);
     linkNode.print();
+    System.out.println("/////////////////////");
+    linkNode.add(700, 2);
+    linkNode.print();
+    System.out.println();
+    linkNode.print(2);
   }
 
 }
