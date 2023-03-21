@@ -1,4 +1,4 @@
-package Lesson_20.part_5;
+package Lesson_20.part_5_6_7;
 
 public class DynamicNode {
 
@@ -14,6 +14,10 @@ public class DynamicNode {
     linkNode.print();
     System.out.println();
     linkNode.print(2);
+    System.out.println("/////////////////////");
+    System.out.println(linkNode.size());
+    linkNode.remove();
+    linkNode.print();
   }
 
 }

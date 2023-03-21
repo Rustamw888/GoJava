@@ -1,4 +1,4 @@
-package Lesson_20.part_5;
+package Lesson_20.part_5_6_7;
 
 public class Node1 {
 
@@ -42,6 +42,24 @@ class LinkNode {
     Node1 temp = new Node1(data, null);
     tail.setNext(temp);
     tail = tail.getNext();
+  }
+
+  public int size() {
+    Node1 ref = head;
+    int count = 0;
+    while (ref != null) {
+      ref = ref.getNext();
+      count++;
+    }
+    return count;
+  }
+
+  public void remove() {
+    Node1 ref = head;
+    for (int i = 0; i < size() - 2; i++) {
+      ref = ref.getNext();
+    }
+    ref.setNext(null);
   }
 
   public void add(int data, int index) {
