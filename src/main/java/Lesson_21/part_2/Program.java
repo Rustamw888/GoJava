@@ -4,14 +4,11 @@ public class Program {
 
   public static void main(String[] args) {
 
-    PizzaStore store = new PizzaStore();
-    Pizza pizza1 = store.createPizza("NY", "NYcheese");
-    pizza1.cut();
-    Pizza pizza2 = store.createPizza("CH", "CHpepperoni");
-    pizza2.cut();
-    Pizza pizza3 = store.createPizza("VG", "vegan");
-    pizza1.printInfo();
-    pizza2.printInfo();
+    PizzaStore nYStore = new NYPizzaStore();
+    PizzaStore cHStore = new CHPizzaStore();
+    Pizza nyPizza = nYStore.orderPizza("cheese");
+    Pizza chPizza = cHStore.orderPizza("pepperoni");
+
   }
 
 }
@@ -23,31 +20,43 @@ abstract class Pizza {
   }
 }
 
-class PizzaStore {
-  public Pizza createPizza(String style, String type) {
-    if(style.equals("NY")) {
-      if (type.equals("NYcheese")) {
-        return new NYCheesePizza();
-      } else if (type.equals("NYpepperoni")) {
-        return new NYPepperoniPizza();
-      } else {
-        System.out.println("ERROR");
-        return null;
-      }
-    } else if (style.equals("CH")) {
-      if (type.equals("CHcheese")) {
-        return new CHCheesePizza();
-      } else if (type.equals("CHpepperoni")) {
-        return new CHPepperoniPizza();
-      } else {
-        System.out.println("ERROR");
-        return null;
-      }
+abstract class PizzaStore {
+
+  public Pizza orderPizza(String type) {
+    Pizza pizza = createPizza(type);
+    pizza.printInfo();
+    pizza.cut();
+    return pizza;
+  }
+
+  abstract Pizza createPizza(String type);
+}
+
+class NYPizzaStore extends PizzaStore {
+
+  public Pizza createPizza(String type) {
+    if (type.equals("cheese")) {
+      return new NYCheesePizza();
+    } else if (type.equals("pepperoni")) {
+      return new NYPepperoniPizza();
     } else {
       System.out.println("ERROR");
       return null;
     }
+  }
+}
 
+class CHPizzaStore extends PizzaStore {
+
+  public Pizza createPizza(String type) {
+    if (type.equals("cheese")) {
+      return new NYCheesePizza();
+    } else if (type.equals("pepperoni")) {
+      return new NYPepperoniPizza();
+    } else {
+      System.out.println("ERROR");
+      return null;
+    }
   }
 }
 
