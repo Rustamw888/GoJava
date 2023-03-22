@@ -5,15 +5,15 @@ import lombok.SneakyThrows;
 public class SomeThread {
 
   public static void main(String[] args) {
-    MyThread1 myThread1 = new MyThread1();
+    Thread myThread1 = new Thread(new MyRunnable());
     MyThread2 myThread2 = new MyThread2();
     myThread2.start();
-    myThread1.start();
+    myThread1.run();
     System.out.println("STOP");
   }
 }
 
-class MyThread1 extends Thread {
+class MyRunnable implements Runnable {
 
   @Override
   public void run() {
