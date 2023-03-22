@@ -1,4 +1,4 @@
-package Lesson_24;
+package Lesson_24.part_1;
 
 public class Singleton {
 
