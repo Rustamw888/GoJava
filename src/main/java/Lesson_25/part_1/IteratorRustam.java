@@ -1,4 +1,4 @@
-package Lesson_24.part_4;
+package Lesson_25.part_1;
 
 public interface IteratorRustam<T> {
 
