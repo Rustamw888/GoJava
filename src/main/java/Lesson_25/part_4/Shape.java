@@ -18,6 +18,10 @@ public class Shape {
     return points.get(points.size() - 1);
   }
 
+  public ArrayList<Point> getPoints() {
+    return points;
+  }
+
   public String toString() {
     StringBuilder stringBuilder = new StringBuilder();
     for (Point point : points) {
