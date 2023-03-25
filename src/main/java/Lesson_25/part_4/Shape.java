@@ -1,14 +1,28 @@
 package Lesson_25.part_4;
 
+import java.util.ArrayList;
+
 public class Shape {
 
-  private Point[] points;
+  private ArrayList<Point> points;
 
-  public Shape(int count) {
-    this.points = new Point[count];
+  public Shape() {
+    this.points = new ArrayList<>();
   }
 
-  public void setPoints(Point p) {
+  public void addPoint(Point p) {
+    points.add(p);
+  }
 
+  public Point getLastPoint() {
+    return points.get(points.size() - 1);
+  }
+
+  public String toString() {
+    StringBuilder stringBuilder = new StringBuilder();
+    for (Point point : points) {
+      stringBuilder.append(point.toString() + "\n");
+    }
+    return stringBuilder.toString();
   }
 }

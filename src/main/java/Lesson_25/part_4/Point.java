@@ -17,4 +17,8 @@ public class Point {
   public double getY() {
     return y;
   }
+
+  public String toString() {
+    return String.format("x = %s; y = %s;", x, y);
+  }
 }
