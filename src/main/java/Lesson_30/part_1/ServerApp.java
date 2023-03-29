@@ -1,4 +1,4 @@
-package Lesson_30;
+package Lesson_30.part_1;
 
 import java.io.*;
 import java.net.ServerSocket;
@@ -7,7 +7,7 @@ import java.net.Socket;
 public class ServerApp {
 
     public static void main(String[] args) {
-        try (ServerSocket server = new ServerSocket(8080)) {
+        try (ServerSocket server = new ServerSocket(9998)) {
 
             System.out.println("Server started...");
             while (true) {
