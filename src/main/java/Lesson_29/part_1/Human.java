@@ -1,4 +1,4 @@
-package Lesson_29;
+package Lesson_29.part_1;
 
 public class Human {
 
