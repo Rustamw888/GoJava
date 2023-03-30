@@ -18,7 +18,6 @@ public class ServerApp4 {
                     new OutputStreamWriter(socket.getOutputStream()));
         ) {
           System.out.println("Client connected");
-
           String request = reader.readLine();
           String response = String.format("Hello, your request = %s", request);
           Thread.sleep(500);
