@@ -20,15 +20,8 @@ public class ServerApp6 {
               BufferedWriter writer = new BufferedWriter(
                 new OutputStreamWriter(socket.getOutputStream()));
             ) {
-            System.out.println("Client connected");
-            String request = reader.readLine();
-            String response = String.format("Hello, your request = %s", request);
-            Thread.sleep(500);
-            System.out.println(response);
-            writer.write(response);
-            writer.newLine();
-            writer.flush();
-          } catch (Exception e) {
+              serveService(reader, writer);
+            } catch (Exception e) {
             throw new RuntimeException(e);
           } finally {
               try {
@@ -46,6 +39,17 @@ public class ServerApp6 {
     } catch (IOException e) {
       e.printStackTrace();
     }
+  }
+
+  private static void serveService(BufferedReader reader, BufferedWriter writer) throws IOException, InterruptedException {
+    System.out.println("Client connected");
+    String request = reader.readLine();
+    String response = String.format("Hello, your request = %s", request);
+    Thread.sleep(500);
+    System.out.println(response);
+    writer.write(response);
+    writer.newLine();
+    writer.flush();
   }
 
 }
