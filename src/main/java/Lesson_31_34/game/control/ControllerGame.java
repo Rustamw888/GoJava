@@ -18,7 +18,7 @@ public class ControllerGame {
   }
 
   public int inputCoordinat(String coordinat) {
-    System.out.printf("Введите координату %s", coordinat);
+    System.out.printf("Введите координату %s: ", coordinat);
     return scanner.nextInt();
   }
 
@@ -54,9 +54,8 @@ public class ControllerGame {
     return true;
   }
 
-  public boolean getWinnerPlayer(Player player) {
+  public boolean checkHorizontal(Player player) {
     int count;
-    // по горизонтали
     for (int i = 0; i < field.getSIZE_FIELD(); i++) {
       count = 0;
       for (int j = 0; j < field.getSIZE_FIELD(); j++) {
@@ -68,7 +67,11 @@ public class ControllerGame {
         }
       }
     }
-    // по вертикали
+    return false;
+  }
+
+  public boolean checkVertical(Player player) {
+    int count;
     for (int i = 0; i < field.getSIZE_FIELD(); i++) {
       count = 0;
       for (int j = 0; j < field.getSIZE_FIELD(); j++) {
@@ -80,26 +83,14 @@ public class ControllerGame {
         }
       }
     }
-    // по диагонали 1
+    return false;
+  }
+
+  public boolean checkDiagonal1(Player player) {
+    int count;
     count = 0;
-    for (int i = 0; i < field.getSIZE_FIELD(); i++) {
-      for (int j = 0; j < field.getSIZE_FIELD(); j++) {
-        if (field.getCellField(i, j) == player.getFIGURE()) {
-          count++;
-          break;
-        }
-        if (count == field.getSIZE_FIELD()) {
-          return true;
-        }
-      }
-    }
-    if (count == field.getSIZE_FIELD()) {
-      return true;
-    }
-    // по диагонали 2
-    count = 0;
-    for (int i = field.getSIZE_FIELD(); i >= 0; i--) {
-      for (int j = field.getSIZE_FIELD(); j >= 0; j--) {
+    for (int i = 0; i < field.getSIZE_FIELD() - 1; i++) {
+      for (int j = 0; j < field.getSIZE_FIELD() - 1; j++) {
         if (field.getCellField(i, j) == player.getFIGURE()) {
           count++;
           break;
@@ -112,7 +103,31 @@ public class ControllerGame {
     return false;
   }
 
-  public String getWinnerPlayer() {
+  public boolean checkDiagonal2(Player player) {
+    int count;
+    count = 0;
+    for (int i = field.getSIZE_FIELD() - 1; i >= 0; i--) {
+      for (int j = field.getSIZE_FIELD() - 1; j >= 0; j--) {
+        if (field.getCellField(i, j) == player.getFIGURE()) {
+          count++;
+          break;
+        }
+      }
+    }
+    if (count == field.getSIZE_FIELD()) {
+      return true;
+    }
+    return false;
+  }
+
+  public boolean getWinnerPlayer(Player player) {
+    System.out.printf("H=%s, V= %s, D1=%s, D2=%s\n", checkHorizontal(player), checkVertical(player),
+        checkDiagonal1(player), checkDiagonal2(player));
+    return checkHorizontal(player) || checkVertical(player) ||
+        checkDiagonal1(player) || checkDiagonal2(player);
+  }
+
+  public String getNameWinnerPlayer() {
     if (getWinnerPlayer(player1)) {
       return player1.getNAME();
     } else if (getWinnerPlayer(player2)) {
