@@ -16,6 +16,15 @@ public class Field {
     setStateField(DEFAULT_SYMBOL);
   }
 
+  private boolean checkCoordinat(int coordinat) {
+    if (coordinat >= getMIN_NUMBER() && coordinat <= getMAX_NUMBER()) {
+      return true;
+    } else {
+      System.out.println("Проверьте координаты");
+      return false;
+    }
+  }
+
   public void setStateField(String symbol) {
     for (int i = 0; i < getSIZE_FIELD(); i++) {
       for (int j = 0; j < getSIZE_FIELD(); j++) {
@@ -25,7 +34,18 @@ public class Field {
   }
 
   public void setCellField(int i, int j, String symbol) {
-    this.stateField[i][j] = symbol;
+    if (checkCoordinat(i) && checkCoordinat(j)) {
+      this.stateField[i][j] = symbol;
+    } else {
+      System.out.println("Поле занято");
+    }
+  }
+
+  public String getCellField(int i, int j) {
+    if (checkCoordinat(i) && checkCoordinat(j)) {
+      return stateField[i][j];
+    }
+    return null;
   }
 
   public String[][] getStateField() {
