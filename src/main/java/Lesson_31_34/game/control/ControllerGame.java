@@ -89,12 +89,9 @@ public class ControllerGame {
   public boolean checkDiagonal1(Player player) {
     int count;
     count = 0;
-    for (int i = 0; i < field.getSIZE_FIELD() - 1; i++) {
-      for (int j = i; j <= i; j++) {
-        if (field.getCellField(i, j) == player.getFIGURE()) {
-          count++;
-          break;
-        }
+    for (int i = 0; i < field.getSIZE_FIELD(); i++) {
+      if (field.getCellField(i, i) == player.getFIGURE()) {
+        count++;
       }
     }
     if (count == field.getSIZE_FIELD()) {
@@ -107,11 +104,8 @@ public class ControllerGame {
     int count;
     count = 0;
     for (int i = field.getSIZE_FIELD() - 1; i >= 0; i--) {
-      for (int j = field.getSIZE_FIELD() - 1 - i; j >= field.getSIZE_FIELD() - 1 - i; j--) {
-        if (field.getCellField(i, j) == player.getFIGURE()) {
-          count++;
-          break;
-        }
+      if (field.getCellField(i, field.getSIZE_FIELD() - 1 - i) == player.getFIGURE()) {
+        count++;
       }
     }
     if (count == field.getSIZE_FIELD()) {

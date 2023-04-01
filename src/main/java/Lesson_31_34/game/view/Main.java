@@ -20,7 +20,7 @@ public class Main {
       y = controllerGame.inputCoordinat("y");
       controllerGame.movePlayer(x, y, player1);
       view.showField();
-      if(controllerGame.getWinnerPlayer(player1)) {
+      if(controllerGame.getWinnerPlayer(player1) || controllerGame.endGame()) {
         break;
       }
 
@@ -28,7 +28,7 @@ public class Main {
       y = controllerGame.inputCoordinat("y");
       controllerGame.movePlayer(x, y, player2);
       view.showField();
-      if(controllerGame.getWinnerPlayer(player2)) {
+      if(controllerGame.getWinnerPlayer(player2) || controllerGame.endGame()) {
         break;
       }
     }
