@@ -90,7 +90,7 @@ public class ControllerGame {
     int count;
     count = 0;
     for (int i = 0; i < field.getSIZE_FIELD() - 1; i++) {
-      for (int j = 0; j < field.getSIZE_FIELD() - 1; j++) {
+      for (int j = i; j <= i; j++) {
         if (field.getCellField(i, j) == player.getFIGURE()) {
           count++;
           break;
@@ -107,7 +107,7 @@ public class ControllerGame {
     int count;
     count = 0;
     for (int i = field.getSIZE_FIELD() - 1; i >= 0; i--) {
-      for (int j = field.getSIZE_FIELD() - 1; j >= 0; j--) {
+      for (int j = field.getSIZE_FIELD() - 1 - i; j >= field.getSIZE_FIELD() - 1 - i; j--) {
         if (field.getCellField(i, j) == player.getFIGURE()) {
           count++;
           break;
