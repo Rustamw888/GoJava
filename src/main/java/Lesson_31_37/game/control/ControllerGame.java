@@ -1,7 +1,7 @@
-package Lesson_31_34.game.control;
+package Lesson_31_37.game.control;
 
-import Lesson_31_34.game.models.Field;
-import Lesson_31_34.game.models.Player;
+import Lesson_31_37.game.models.Field;
+import Lesson_31_37.game.models.Player;
 
 import java.util.Scanner;
 

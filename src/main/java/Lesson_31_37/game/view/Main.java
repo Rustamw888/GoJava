@@ -1,8 +1,8 @@
-package Lesson_31_34.game.view;
+package Lesson_31_37.game.view;
 
-import Lesson_31_34.game.control.ControllerGame;
-import Lesson_31_34.game.models.Field;
-import Lesson_31_34.game.models.Player;
+import Lesson_31_37.game.control.ControllerGame;
+import Lesson_31_37.game.models.Field;
+import Lesson_31_37.game.models.Player;
 
 public class Main {
 

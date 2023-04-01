@@ -1,4 +1,4 @@
-package Lesson_31_34.game.models;
+package Lesson_31_37.game.models;
 
 import org.junit.jupiter.api.Test;
 
