@@ -1,4 +1,4 @@
-package Lesson_39;
+package Lesson_39.part_1;
 
 public class Button {
 
