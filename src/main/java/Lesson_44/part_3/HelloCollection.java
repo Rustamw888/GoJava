@@ -44,8 +44,8 @@ public class HelloCollection {
     c2.add("1");
 
     System.out.println(c2);
-//    c2.sort(null);
-//    System.out.println(c2);
+    c2.sort(null);
+    System.out.println(c2);
     Collections.sort(c2);
     System.out.println(c2);
   }
