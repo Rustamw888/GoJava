@@ -2,12 +2,8 @@ package Lesson_44.part_5;
 
 public class Polimorfism {
 
-  public static void printName(Student student) {
-    System.out.println(student.getName());
-  }
-
-  public static void printName(Employee employee) {
-    System.out.println(employee.getName());
+  public static void printName(Human human) {
+    System.out.println(human.getName());
   }
 
   public static void main(String[] args) {
