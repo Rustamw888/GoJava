@@ -19,18 +19,26 @@ public class InerTest {
 
   public static void main(String[] args) {
 
-    Invoice invoice1 = new Invoice();
-    Invoice invoice2 = new Invoice();
-    invoice1.show();
-    invoice1.addItem("Apple", 10, 1);
-    invoice1.addItem("Carrot", 10, 2);
-    invoice1.addItem("Egg", 20, 1);
+//    Invoice invoice1 = new Invoice();
+//    Invoice invoice2 = new Invoice();
+//    invoice1.show();
+//    invoice1.addItem("Apple", 10, 1);
+//    invoice1.addItem("Carrot", 10, 2);
+//    invoice1.addItem("Egg", 20, 1);
+//
+//    invoice1.show();
+//    invoice2.show();
+//
+//    Invoice.Item item2 = new Invoice.Item();
+//    System.out.println(item2);
 
-    invoice1.show();
-    invoice2.show();
-
-    Invoice.Item item2 = new Invoice.Item();
-    System.out.println(item2);
+    Network myFace = new Network();
+    Network.Member fred = myFace.enroll("Fred");
+    Network.Member bob = myFace.enroll("Bob");
+    myFace.show();
+    System.out.println("---------------------------------------");
+    fred.leave();
+    myFace.show();
   }
 }
 
@@ -80,6 +88,18 @@ class Network {
       this.name = name;
       friends = new ArrayList<>();
     }
+
+    @Override
+    public String toString() {
+      return "Member{" +
+          "name='" + name + '\'' +
+          ", friends=" + friends +
+          '}';
+    }
+
+    public void leave() {
+      members.remove(this);
+    }
   }
 
   private ArrayList<Member> members = new ArrayList<>();
@@ -88,5 +108,9 @@ class Network {
     Member newMember = new Member(name);
     members.add(newMember);
     return newMember;
+  }
+
+  public void show() {
+    System.out.println(members);
   }
 }
