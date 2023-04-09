@@ -45,7 +45,7 @@ public class JaxbWriter {
         }
       };
 
-      marshaller.marshal(persons, new FileOutputStream("src/main/java/Lesson_48/part_4/jaxbTest/person1.xml"));
+      marshaller.marshal(persons, new FileOutputStream("src/main/java/Lesson_48/part_4/jaxbTest/person111.xml"));
 
       System.out.println("XML-файл создан");
     } catch (JAXBException e) {
