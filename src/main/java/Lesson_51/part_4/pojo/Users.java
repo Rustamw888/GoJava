@@ -1,4 +1,4 @@
-package Lesson_51.part_4;
+package Lesson_51.part_4.pojo;
 
 import java.util.Objects;
 
@@ -62,5 +62,15 @@ public class Users {
   @Override
   public int hashCode() {
     return Objects.hash(id, name, age, email);
+  }
+
+  @Override
+  public String toString() {
+    return "Users{" +
+        "id=" + id +
+        ", name='" + name + '\'' +
+        ", age=" + age +
+        ", email='" + email + '\'' +
+        '}';
   }
 }
