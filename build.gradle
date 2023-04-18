@@ -23,7 +23,7 @@ dependencies {
     implementation 'org.jsoup:jsoup:1.15.4'
     implementation 'com.google.code.gson:gson:2.10.1'
     implementation 'org.json:json:20230227'
-    implementation 'mysql:mysql-connector-java:5.1.6'
+    implementation 'mysql:mysql-connector-java:8.0.32'
 }
 
 compileJava.options.encoding = 'UTF-8'

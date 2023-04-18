@@ -23,7 +23,7 @@ public class Main {
       dbConnection = DriverManager.getConnection(connectionString, dbUser, dbPass);
       String insert = String.format(
 //          "INSERT " + dbName + ".%s (%s, %s, %s) VALUES(?,?,?)",
-          "INSERT %s (%s, %s, %s) VALUES(?,?,?)",
+          "INSERT INTO %s (%s, %s, %s) VALUES(?,?,?)",
           Const.USER_TABLE,
           Const.USER_NAME,
           Const.USER_AGE,
