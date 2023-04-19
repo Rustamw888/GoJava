@@ -9,7 +9,7 @@ public class TestSQL {
 //    new UserServiceMySQL().addUser(user);
 //    new UserServiceMySQL().removeUserById(7);
 
-    List<Users> usersList = new UserServiceMySQL().getAllUsers();
+    List<Users> usersList = new UserServiceMySQL().getAll();
     for (Users users : usersList) {
       System.out.println("users = " + users);
     }

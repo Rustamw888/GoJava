@@ -26,7 +26,7 @@ public class UserServiceMySQL implements UserDAO {
   }
 
   @Override
-  public void addUser(Users user) {
+  public void add(Users user) {
     Connection dbConnection = null;
     PreparedStatement preparedStatement = null;
 
@@ -62,7 +62,7 @@ public class UserServiceMySQL implements UserDAO {
   }
 
   @Override
-  public List<Users> getAllUsers() {
+  public List<Users> getAll() {
     Connection dbConnection = null;
     Statement statement = null;
     List<Users> users = new ArrayList<>();
@@ -103,7 +103,7 @@ public class UserServiceMySQL implements UserDAO {
   }
 
   @Override
-  public Users getUserById(int id) {
+  public Users getById(int id) {
     Connection dbConnection = null;
     PreparedStatement preparedStatement = null;
     Users user = new Users();
@@ -144,7 +144,7 @@ public class UserServiceMySQL implements UserDAO {
   }
 
   @Override
-  public void removeUserById(int id) {
+  public void removeById(int id) {
 
     String sqlQuery = "DELETE FROM users WHERE id=?";
     PreparedStatement preparedStatement = null;
